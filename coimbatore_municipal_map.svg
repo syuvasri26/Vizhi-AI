@@ -1,0 +1,285 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #EBF1F0; }
+      .hills { fill: #D1E8DF; opacity: 0.85; }
+      .kerala-border { stroke: #94A3B8; stroke-dasharray: 4,4; stroke-width: 1.5; fill: none; }
+      .corp-boundary { stroke: #EF4444; stroke-width: 2.5; stroke-dasharray: 6,4; fill: rgba(254, 226, 226, 0.18); }
+      .highway { stroke: #94A3B8; stroke-width: 3.5; fill: none; }
+      .major-road { stroke: #CBD5E1; stroke-width: 2; fill: none; }
+      .water { fill: #BFDBFE; stroke: #93C5FD; stroke-width: 1; }
+      .locality-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; fill: #1E293B; }
+      .locality-sub { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
+      .regional-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 600; fill: #334155; }
+      .regional-sub { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 10px; font-weight: 400; fill: #64748B; }
+      .badge-highway { fill: #FEF08A; stroke: #CA8A04; stroke-width: 1; rx: 3; }
+      .badge-text { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; fill: #713F12; }
+      .airport-icon { fill: #0284C7; }
+    </style>
+    <filter id="subtle-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect width="1200" height="900" class="bg" />
+
+  <!-- Western Ghats Green Foothills & Forests (Left side matching screenshot) -->
+  <path d="M0 0 L260 0 C240 120 280 220 230 350 C180 470 240 580 170 720 C130 800 150 860 100 900 L0 900 Z" class="hills" />
+  <path d="M0 620 C80 640 140 680 180 770 C140 830 110 870 60 900 L0 900 Z" fill="#BBDEC9" opacity="0.9" />
+
+  <!-- Kerala / Tamil Nadu State Border (Dashed) -->
+  <path d="M120 0 C150 140 100 240 80 380 C60 480 130 600 90 750 C70 820 40 870 20 900" class="kerala-border" />
+  <text x="50" y="770" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#64748B" letter-spacing="1">KERALAM</text>
+  <text x="130" y="700" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#475569" letter-spacing="1">TAMIL NADU</text>
+
+  <!-- Lakes / Water Bodies of Coimbatore -->
+  <!-- Malampuzha reservoir tail (bottom left) -->
+  <path d="M0 830 C40 820 90 840 120 860 C80 890 30 890 0 900 Z" class="water" />
+  <text x="80" y="875" class="regional-sub">Malampuzha-I</text>
+  <text x="80" y="888" class="regional-sub">மலம்புழா-I</text>
+
+  <!-- Coimbatore city lakes: Ukkadam Periyakulam, Valankulam, Singanallur lake, Kurichi lake -->
+  <ellipse cx="575" cy="515" rx="20" ry="12" class="water" /> <!-- Ukkadam Periyakulam -->
+  <ellipse cx="615" cy="510" rx="16" ry="9" class="water" /> <!-- Valankulam -->
+  <ellipse cx="715" cy="515" rx="26" ry="15" class="water" /> <!-- Singanallur Lake -->
+  <ellipse cx="585" cy="590" rx="22" ry="14" class="water" /> <!-- Kurichi Lake -->
+
+  <!-- Road Network -->
+  <!-- NH 544: Cochin-Salem bypass arterial (Avinashi Rd & southern bypass) -->
+  <path d="M140 900 C300 840 460 740 560 670 C680 580 820 450 1040 280 C1100 230 1150 180 1200 150" class="highway" stroke="#64748B" stroke-width="4.5" />
+  <path d="M560 670 C640 660 780 620 920 540 C1060 480 1140 430 1200 400" class="highway" stroke="#64748B" stroke-width="3" />
+
+  <!-- NH 948: Sathy Road (Gandhipuram to Ganapathy to Annur) -->
+  <path d="M600 470 L630 390 L670 290 L750 170 L820 80 L850 0" class="highway" />
+
+  <!-- NH 181: Mettupalayam Road (from Town Hall / Gandhipuram through Thudiyalur to Karamadai) -->
+  <path d="M570 490 L550 400 L540 320 L530 200 L520 120 L510 0" class="highway" />
+
+  <!-- Trichy Road (from Town Hall through Ramanathapuram & Singanallur to Sulur) -->
+  <path d="M570 490 L660 500 L730 515 L880 540 L1020 570" class="highway" />
+
+  <!-- Pollachi Road (from Ukkadam through Sundarapuram & Kinathukadavu) -->
+  <path d="M575 520 L585 620 L620 720 L660 840 L680 900" class="highway" />
+
+  <!-- Palakkad Road (from Ukkadam through Kuniyamuthur to Walayar) -->
+  <path d="M570 520 L480 580 L360 690 L240 790 L160 860" class="highway" />
+
+  <!-- Marudhamalai Road (from RS Puram / DB Rd westwards) -->
+  <path d="M560 470 L480 450 L400 440 L350 430" class="major-road" />
+
+  <!-- Avinashi Road Elevated Corridor (Gandhipuram -> Peelamedu -> Airport -> Neelambur) -->
+  <path d="M590 465 L680 440 L760 420 L840 370 L920 330" class="highway" stroke="#3B82F6" stroke-width="4" />
+
+  <!-- Secondary city connecting rings & bypasses -->
+  <path d="M530 320 C620 340 720 360 760 420" class="major-road" />
+  <path d="M480 580 C540 600 620 600 700 580" class="major-road" />
+  <path d="M680 440 L690 510 L680 620" class="major-road" />
+  <path d="M840 370 L860 530 L900 660" class="major-road" />
+
+  <!-- COIMBATORE CITY MUNICIPAL CORPORATION BOUNDARY (RED DASHED CONTOUR) -->
+  <!-- Matches exact silhouette from user's image around Thudiyalur, Kalapatti, Singanallur, Ukkadam, Kovaipudur -->
+  <path d="
+    M 510 320
+    C 490 320 460 360 460 390
+    C 460 410 420 420 405 450
+    C 390 480 410 510 430 520
+    C 440 530 460 525 470 540
+    C 475 560 450 600 450 630
+    C 450 660 480 680 510 680
+    C 530 680 540 640 550 610
+    C 560 580 600 580 620 570
+    C 640 560 655 540 680 540
+    C 710 540 730 545 745 525
+    C 760 505 765 480 755 460
+    C 745 440 770 410 760 380
+    C 750 350 710 330 680 325
+    C 650 320 625 330 600 320
+    C 570 310 540 320 510 320 Z
+  " class="corp-boundary" filter="url(#subtle-shadow)" />
+
+  <!-- Highway Shields / Badges -->
+  <!-- NH 544 Badge -->
+  <g transform="translate(680, 605)">
+    <rect width="32" height="18" class="badge-highway" />
+    <text x="16" y="13" text-anchor="middle" class="badge-text">544</text>
+  </g>
+  <g transform="translate(980, 285)">
+    <rect width="32" height="18" class="badge-highway" />
+    <text x="16" y="13" text-anchor="middle" class="badge-text">544</text>
+  </g>
+  <g transform="translate(225, 920)">
+    <rect width="32" height="18" class="badge-highway" />
+    <text x="16" y="13" text-anchor="middle" class="badge-text">544</text>
+  </g>
+  <!-- NH 948 Badge -->
+  <g transform="translate(640, 400)">
+    <rect width="30" height="16" class="badge-highway" />
+    <text x="15" y="12" text-anchor="middle" class="badge-text">948</text>
+  </g>
+  <g transform="translate(760, 150)">
+    <rect width="30" height="16" class="badge-highway" />
+    <text x="15" y="12" text-anchor="middle" class="badge-text">948</text>
+  </g>
+  <!-- Route 181 -->
+  <g transform="translate(540, 160)">
+    <rect width="26" height="16" fill="#F1F5F9" stroke="#94A3B8" rx="3"/>
+    <text x="13" y="12" text-anchor="middle" font-family="'JetBrains Mono'" font-size="9" fill="#334155">181</text>
+  </g>
+  <!-- Route 81 -->
+  <g transform="translate(850, 465)">
+    <rect width="24" height="16" class="badge-highway" />
+    <text x="12" y="12" text-anchor="middle" class="badge-text">81</text>
+  </g>
+
+  <!-- Airport Icon at Peelamedu / SITRA (Matching Screenshot flight circle) -->
+  <g transform="translate(730, 435)">
+    <circle cx="15" cy="15" r="15" fill="#0284C7" />
+    <path d="M15 7 L17 13 L23 15 L17 17 L15 23 L13 17 L7 15 L13 13 Z" fill="#FFFFFF" />
+  </g>
+
+  <!-- CORE CITY LABELS (Bilingual Tamil & English as in image) -->
+
+  <!-- GANDHIPURAM (City Core) -->
+  <g transform="translate(585, 475)" text-anchor="middle">
+    <circle cx="0" cy="-6" r="4" fill="#1E293B" stroke="#FFFFFF" stroke-width="2"/>
+    <text y="14" class="locality-title">Gandhipuram</text>
+    <text y="28" class="locality-sub">காந்திபுரம்</text>
+  </g>
+
+  <!-- UKKADAM -->
+  <g transform="translate(570, 535)" text-anchor="middle">
+    <circle cx="0" cy="-4" r="3.5" fill="#1E293B" stroke="#FFFFFF" stroke-width="1.5"/>
+    <text y="12" class="regional-title" font-weight="700">UKKADAM</text>
+    <text y="24" class="regional-sub">உக்கடம்</text>
+  </g>
+
+  <!-- SINGANALLUR -->
+  <g transform="translate(720, 515)" text-anchor="middle">
+    <circle cx="0" cy="-4" r="3.5" fill="#1E293B" stroke="#FFFFFF" stroke-width="1.5"/>
+    <text y="12" class="locality-title" font-size="14">Singanallur</text>
+    <text y="26" class="locality-sub">சிங்காநல்லூர்</text>
+  </g>
+
+  <!-- GANAPATHY -->
+  <g transform="translate(630, 440)" text-anchor="middle">
+    <text y="0" class="regional-title" font-size="11">GANAPATHY</text>
+    <text y="12" class="regional-sub">கணபதி</text>
+  </g>
+
+  <!-- THUDIYALUR -->
+  <g transform="translate(535, 350)" text-anchor="middle">
+    <circle cx="0" cy="-4" r="3.5" fill="#1E293B" stroke="#FFFFFF" stroke-width="1.5"/>
+    <text y="12" class="locality-title" font-size="14">Thudiyalur</text>
+    <text y="25" class="locality-sub">துடியலூர்</text>
+  </g>
+
+  <!-- KALAPATTI -->
+  <g transform="translate(740, 360)" text-anchor="middle">
+    <text y="0" class="regional-title">Kalapatti</text>
+    <text y="13" class="regional-sub">காளப்பட்டி</text>
+  </g>
+
+  <!-- NEELAMBUR -->
+  <g transform="translate(830, 385)" text-anchor="middle">
+    <text y="0" class="regional-title">Neelambur</text>
+    <text y="13" class="regional-sub">நீலாம்பூர்</text>
+  </g>
+
+  <!-- KOVAIPUDUR -->
+  <g transform="translate(520, 620)" text-anchor="middle">
+    <text y="0" class="regional-title" font-size="13">Kovaipudur</text>
+    <text y="13" class="regional-sub">கோவை</text>
+    <text y="25" class="regional-sub">புதூர்</text>
+  </g>
+
+  <!-- MARUDHAMALAI ADIVARAM -->
+  <g transform="translate(390, 440)" text-anchor="middle">
+    <text y="0" class="regional-title" font-size="10">MARUDHAMALAI</text>
+    <text y="11" class="regional-title" font-size="10">ADIVARAM</text>
+    <text y="22" class="regional-sub" font-size="9">மருதமலை</text>
+  </g>
+
+  <!-- SURROUNDING TOWNS (Outside Corporation Limits) -->
+  <!-- SULUR -->
+  <g transform="translate(880, 465)" text-anchor="middle">
+    <text y="0" class="regional-title">Sulur</text>
+    <text y="13" class="regional-sub">சூலூர்</text>
+  </g>
+
+  <!-- MALUMICHAMPATTI -->
+  <g transform="translate(650, 700)" text-anchor="middle">
+    <text y="0" class="regional-title">Malumichampatti</text>
+    <text y="13" class="regional-sub">மலுமிச்சம்பட்டி</text>
+  </g>
+
+  <!-- KINATHUKADAVU -->
+  <g transform="translate(680, 875)" text-anchor="middle">
+    <text y="0" class="regional-title">Kinathukadavu</text>
+    <text y="13" class="regional-sub">கிணத்துக்கடவு</text>
+  </g>
+
+  <!-- SOMANUR -->
+  <g transform="translate(980, 340)" text-anchor="middle">
+    <text y="0" class="regional-title">Somanur</text>
+    <text y="13" class="regional-sub">சோமனூர்</text>
+  </g>
+
+  <!-- BILICHI -->
+  <g transform="translate(580, 115)" text-anchor="middle">
+    <text y="0" class="regional-title">Bilichi</text>
+    <text y="13" class="regional-sub">பிலிச்சி</text>
+  </g>
+
+  <!-- KARAMADAI -->
+  <g transform="translate(565, 30)" text-anchor="middle">
+    <text y="0" class="regional-title">Karamadai</text>
+    <text y="13" class="regional-sub">காரமடை</text>
+  </g>
+
+  <!-- ANNUR -->
+  <g transform="translate(860, 40)" text-anchor="middle">
+    <text y="0" class="regional-title">Annur</text>
+    <text y="13" class="regional-sub">அன்னூர்</text>
+  </g>
+
+  <!-- KARIYAMPALAYAM -->
+  <g transform="translate(790, 105)" text-anchor="middle">
+    <text y="0" class="regional-title">Kariyampalayam</text>
+    <text y="13" class="regional-sub">கரியம்பாளையம்</text>
+  </g>
+
+  <!-- WALAYAR -->
+  <g transform="translate(340, 825)" text-anchor="middle">
+    <text y="0" class="regional-title">Walayar</text>
+    <text y="13" class="regional-sub">வாலையார்</text>
+  </g>
+
+  <!-- ANAIKATTI -->
+  <g transform="translate(220, 305)" text-anchor="middle">
+    <text y="0" class="regional-title">Anaikatti</text>
+    <text y="13" class="regional-sub">ஆனைக்கட்டி</text>
+  </g>
+
+  <!-- SADIVAYAL -->
+  <g transform="translate(150, 630)" text-anchor="middle">
+    <text y="0" class="regional-title">Sadivayal</text>
+    <text y="13" class="regional-sub">சாடிவயல்</text>
+  </g>
+
+  <!-- PALAKKAD / KERALA (bottom left) -->
+  <g transform="translate(30, 950)" text-anchor="middle">
+    <text y="0" class="locality-title" fill="#475569">Palakkad</text>
+    <text y="14" class="locality-sub">பாலக்காடு</text>
+  </g>
+
+  <!-- Map Legend Banner in bottom right -->
+  <g transform="translate(930, 810)">
+    <rect width="250" height="75" rx="8" fill="#FFFFFF" opacity="0.95" stroke="#CBD5E1" stroke-width="1" filter="url(#subtle-shadow)" />
+    <text x="15" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0F172A">COIMBATORE DISTRICT MAP</text>
+    <line x1="15" y1="36" x2="45" y2="36" stroke="#EF4444" stroke-width="2.5" stroke-dasharray="4,3" />
+    <text x="52" y="39" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#475569">Corporation Boundary</text>
+    <circle cx="25" cy="54" r="5" fill="#0284C7" />
+    <text x="52" y="57" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#475569">Coimbatore Airport (CJB)</text>
+  </g>
+</svg>
